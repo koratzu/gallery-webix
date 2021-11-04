@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="node_modules/webix/webix.css" />
+    <script src="node_modules/webix/webix.js"></script>
+  </head>
+  <body>
+    <script>
+      webix.ready(function () {
+        webix
+          .ui({
+            view: "window",
+            body: {
+              view: "carousel",
+              id: "carousel",
+              width: 665,
+              height: 440,
+              cols: [
+                {
+                  css: "image",
+                  template: img,
+                  data: { src: "img/pexels-bri-schneiter-346529.jpg" },
+                },
+                {
+                  css: "image",
+                  template: img,
+                  data: {
+                    src: "img/pexels-eberhard-grossgasteiger-691668.jpg",
+                  },
+                },
+                {
+                  css: "image",
+                  template: img,
+                  data: { src: "img/pexels-lisa-1107717.jpg" },
+                },
+                {
+                  css: "image",
+                  template: img,
+                  data: { src: "img/pexels-martin-damboldt-814499.jpg" },
+                },
+                {
+                  css: "image",
+                  template: img,
+                  data: { src: "img/pexels-pixabay-247599.jpg" },
+                },
+                {
+                  css: "image",
+                  template: img,
+                  data: { src: "img/pexels-pixabay-531321.jpg" },
+                },
+              ],
+            },
+            head: {
+              view: "toolbar",
+              type: "MainBar",
+              elements: [{ view: "label", label: "Photobook", align: "left" }],
+            },
+            top: 150,
+            left: 150
+          }).show();
+
+        function img(obj) {
+          return (
+            '<img src="' +
+            obj.src +
+            '" class="content" ondragstart="return false"/>'
+          );
+        }
+      });
+    </script>
+
+    <script>
+      var menu_data = [
+        {
+          id: "dashboard",
+          icon: "mdi mdi-view-dashboard",
+          value: "Dashboards",
+          data: [
+            { id: "dashboard1", value: "Dashboard 1" },
+            { id: "dashboard2", value: "Dashboard 2" },
+          ],
+        },
+        {
+          id: "layouts",
+          icon: "mdi mdi-view-column",
+          value: "Layouts",
+          data: [
+            { id: "accordions", value: "Accordions" },
+            { id: "portlets", value: "Portlets" },
+          ],
+        },
+        {
+          id: "tables",
+          icon: "mdi mdi-table",
+          value: "Data Tables",
+          data: [
+            { id: "tables1", value: "Datatable" },
+            { id: "tables2", value: "TreeTable" },
+            { id: "tables3", value: "Pivot" },
+          ],
+        },
+        {
+          id: "uis",
+          icon: "mdi mdi-puzzle",
+          value: "UI Components",
+          data: [
+            { id: "dataview", value: "DataView" },
+            { id: "list", value: "List" },
+            { id: "menu", value: "Menu" },
+            { id: "tree", value: "Tree" },
+          ],
+        },
+        {
+          id: "tools",
+          icon: "mdi mdi-calendar",
+          value: "Tools",
+          data: [
+            { id: "kanban", value: "Kanban Board" },
+            { id: "pivot", value: "Pivot Chart" },
+            { id: "scheduler", value: "Calendar" },
+          ],
+        },
+        {
+          id: "forms",
+          icon: "mdi mdi-pencil",
+          value: "Forms",
+          data: [
+            { id: "buttons", value: "Buttons" },
+            { id: "selects", value: "Select boxes" },
+            { id: "inputs", value: "Inputs" },
+          ],
+        },
+        { id: "demo", icon: "mdi mdi-book", value: "Documentation" },
+      ];
+    </script>
+    // Daniel Bernal & David Cermeño - 18/04/2021
+  </body>
+</html>
